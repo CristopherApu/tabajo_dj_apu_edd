@@ -2,9 +2,9 @@
 #include <string.h>
 
 struct Cliente{
-    int Clientes;
-    char nombre[30];
+    int cantidadClientes;
     int clave;
+    char nombre[30];
     char mail[50];
     long telefono;
 };
@@ -14,7 +14,7 @@ void ingresarCliente(Cliente* a);
 int main(){
     Cliente cliente;
     ingresarCliente(&cliente);
-    printf("%d\n", cliente.Clientes);
+    printf("%d\n", cliente.cantidadClientes);
     printf("%s\n", cliente.nombre);
     printf("%s\n", cliente.mail);
     printf("%s\n", cliente.telefono);
@@ -23,7 +23,7 @@ int main(){
 
 void ingresarCliente(Cliente* a){
     printf("Ingrese la cantidad de clientes:\n");
-    scanf("%d", &(a->Clientes));
+    scanf("%d", &(a->cantidadClientes));
     printf("Ingrese el nombre o apodo:\n");
     scanf("%s", a->nombre);
     printf("Ingrese su email:\n");
@@ -31,4 +31,3 @@ void ingresarCliente(Cliente* a){
     printf("Ingrese su telefono:\n+ 56 9 ");
     scanf("%lu", &(a->telefono));
 }
-
