@@ -2,12 +2,9 @@
 #include <string.h>
 
 struct Cliente{
-    char nombre[15];
-    char apellido[20];
-    char rut[15];
+    char nombre[30];
     int clave;
     char mail[50];
-    char direccion[70];
     long telefono;
 };
 
@@ -26,19 +23,11 @@ int main(){
 }
 
 void ingresarCliente(Cliente* a){
-    printf("Ingrese su nombre:\n");
+    printf("Ingrese el nombre o apodo:\n");
     scanf("%s", a->nombre);
-    printf("Ingrese su apellido:\n");
-    scanf("%s", a->apellido);
-    printf("Ingrese su rut");
-    scanf("%s", a->rut);
-    printf("Ingrese su clave:\n");
-    scanf("%d", &(a->clave));
     printf("Ingrese su email:\n");
     scanf("%s", a->mail);
-    printf("Ingrese su dirección:\n");
-    scanf("%s", a->direccion);
-    printf("Ingrese su teléfono:\n");
+    printf("Ingrese su teléfono:\n+ 56 9 ");
     scanf("%lu", &(a->telefono));
 }
 
@@ -46,16 +35,8 @@ Cliente crearCliente(){
     Cliente a;
     printf("Ingrese su nombre:\n");
     scanf("%s", a.nombre);
-    printf("Ingrese su apellido:\n");
-    scanf("%s", a.apellido);
-    printf("Ingrese su rut");
-    scanf("%s", a.rut);
-    printf("Ingrese su clave:\n");
-    scanf("%d", &(a.clave));
     printf("Ingrese su email:\n");
     scanf("%s", a.mail);
-    printf("Ingrese su dirección:\n");
-    scanf("%s", a.direccion);
     printf("Ingrese su teléfono:\n");
     scanf("%lu", &(a.telefono));
     return a;
