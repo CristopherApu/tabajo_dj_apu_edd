@@ -13,6 +13,8 @@ struct Cliente{
 void ingresarCliente(Cliente* a);
 
 int main(){
+    
+    FILE * arch = fopen (Lista.txt, a+);
 
     int cantidadClientes;
     
@@ -25,7 +27,7 @@ int main(){
 
     int cont = 1;
     
-    for (int i = 1; i < cantidadClientes; i++) {
+    for (int i = 1; i < cantidadClientes+1; i++) {
     
         cout<<"Ingrese al compa numero " << cont<<"\n";
         ingresarCliente(&cliente);
@@ -43,7 +45,7 @@ int main(){
     }
 
     printf("%s\n", cliente.nombre);
-    
+    fclose(arch);
     return 0;
 }
 
@@ -54,4 +56,5 @@ void ingresarCliente(Cliente* a){
     scanf("%s", a->mail);
     printf("Numero de celular:\n+ 56 9 ");
     scanf("%lu", &(a->telefono));
+    printf("--------------------------------\n");
 }
