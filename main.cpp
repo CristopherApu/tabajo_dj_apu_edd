@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <string.h>
+#include <iostream>
+using namespace std;
 
 struct Cliente{
-    int cantidadClientes;
     int clave;
     char nombre[30];
     char mail[50];
@@ -12,22 +13,45 @@ struct Cliente{
 void ingresarCliente(Cliente* a);
 
 int main(){
+
+    int cantidadClientes;
+    
     Cliente cliente;
-    ingresarCliente(&cliente);
-    printf("%d\n", cliente.cantidadClientes);
+
+    printf("Ingrese la cantidad de personas:\n");
+    scanf("%d", &cantidadClientes);
+
+    if(cantidadClientes > 1){
+
+    int cont = 1;
+    
+    for (int i = 1; i < cantidadClientes; i++) {
+    
+        cout<<"Ingrese al compa numero " << cont<<"\n";
+        ingresarCliente(&cliente);
+        cont++;
+    }
+
+    }   else if (cantidadClientes == 1){
+
+            printf("mejor solo que mal acompañado, eso si, este programa no te va a servir de nada :'c");
+
+    }       else {
+
+                printf("si los compas restan, entonces no deberian ser compas");
+
+    }
+
     printf("%s\n", cliente.nombre);
-    printf("%s\n", cliente.mail);
-    printf("%s\n", cliente.telefono);
+    
     return 0;
 }
 
 void ingresarCliente(Cliente* a){
-    printf("Ingrese la cantidad de clientes:\n");
-    scanf("%d", &(a->cantidadClientes));
-    printf("Ingrese el nombre o apodo:\n");
+    printf("Nombre o apodo:\n");
     scanf("%s", a->nombre);
-    printf("Ingrese su email:\n");
+    printf("Direccion de correo electronico:\n");
     scanf("%s", a->mail);
-    printf("Ingrese su telefono:\n+ 56 9 ");
+    printf("Numero de celular:\n+ 56 9 ");
     scanf("%lu", &(a->telefono));
 }
