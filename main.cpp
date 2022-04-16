@@ -79,7 +79,7 @@ void cuenta(){
    
     scanf("%d", &queConsumio);
    
-         if (queConsumio == 1){
+         if (queConsumio == 1 || queConsumio == 2 || queConsumio == 3 || queConsumio == 4 || queConsumio == 5 || queConsumio == 7 || queConsumio == 8){
 
           montoPorPersona = montoPorPersona + 3000;
           
@@ -92,57 +92,6 @@ void cuenta(){
 
           }
 
-        }else if (queConsumio == 2){
-
-          montoPorPersona = montoPorPersona + 3000;
-          
-          printf("Favor ingrese la hora en la que pidio el consumible\n");
-          scanf("%d", &hora);
-
-          if(hora < 19000){
-
-            montoPorPersona = montoPorPersona - 1500;
-
-          }
-
-        }else if (queConsumio == 3){
-
-          montoPorPersona = montoPorPersona + 3000;
-          
-          printf("Favor ingrese la hora en la que pidio el consumible\n");
-          scanf("%d", &hora);
-
-          if(hora < 19000){
-
-            montoPorPersona = montoPorPersona - 1500;
-
-          }
-
-        }else if (queConsumio == 4){
-            
-          montoPorPersona = montoPorPersona + 3000;
-          
-          printf("Favor ingrese la hora en la que pidio el consumible\n");
-          scanf("%d", &hora);
-
-          if(hora < 19000){
-
-            montoPorPersona = montoPorPersona - 1500;
-
-          }
-
-        }else if (queConsumio == 5){
-            
-          montoPorPersona = montoPorPersona + 3000;
-          
-          printf("Favor ingrese la hora en la que pidio el consumible\n");
-          scanf("%d", &hora);
-
-          if(hora < 19000){
-
-            montoPorPersona = montoPorPersona - 1500;
-
-          }
         }else if (queConsumio == 6){
             
           montoPorPersona = montoPorPersona + 5000;
@@ -152,33 +101,10 @@ void cuenta(){
 
           if(hora < 19000){
 
-            montoPorPersona = montoPorPersona - 3000;
+            montoPorPersona = montoPorPersona - 2500;
 
           }
-        }else if (queConsumio == 7){
-            
-          montoPorPersona = montoPorPersona + 3000;
-          
-          printf("Favor ingrese la hora en la que pidio el consumible\n");
-          scanf("%d", &hora);
-
-          if(hora < 19000){
-
-            montoPorPersona = montoPorPersona - 1500;
-
-          }
-        }else if (queConsumio == 8){
-
-          montoPorPersona = montoPorPersona + 3000;
-          
-          printf("Favor ingrese la hora en la que pidio el consumible\n");
-          scanf("%d", &hora);
-
-          if(hora < 19000){
-
-            montoPorPersona = montoPorPersona - 1500;
-
-          }
+        
         }else if (queConsumio == 9){
             
           montoPorPersona = montoPorPersona + 6000;
