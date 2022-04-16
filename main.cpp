@@ -10,16 +10,14 @@ struct Cliente{         //creamos la estructura del cliente
 };
 
 void ingresarCliente(Cliente* a);
-void guardarCliente();
-void agregarCuenta();
+void cuenta();
 
 int main(){
     
     //FILE* arch = fopen ("Lista.txt", "a+");
 
     int cantidadClientes;
-    int hora;
-    
+
     Cliente cliente;
 
     printf("Ingrese la cantidad de personas:\n");       //preguntamos cuántos clientes tendremos que guardar    
@@ -32,7 +30,11 @@ int main(){
     for (int i = 1; i < cantidadClientes+1; i++) {
     
         cout<<"Ingrese al compa numero " << cont<<"\n"; //agregamos un COUT porque no estábamos logrando imprimir bien con PRINTF y nuestro companero Marks nos ayudó con otra librería con la que trabajó anteriormente.
-        ingresarCliente(&cliente);
+    
+        ingresarCliente(&cliente);      //Ingresamos al cliente
+
+        cuenta();                   //consultamos por su consumo
+
         cont++;
     }
 
@@ -45,8 +47,6 @@ int main(){
                 printf("si los compas restan, entonces no deberian ser compas");
 
     }
-
-    agregarCuenta;
 
     return 0;
 }
@@ -61,31 +61,151 @@ void ingresarCliente(Cliente* a){
     printf("--------------------------------\n");
 }
 
-void guardarCliente(){
+void cuenta(){
 
-    FILE* arch = fopen ("ejemplo.txt", "a+");
-    fprintf(arch, "%s", cliente.nombre);
-    fprintf(arch, "%s", cliente.mail);
-    fprintf(arch, "%s", cliente.telefono);
-    fclose(arch);;
+    int hora;
+    int consumioMas = 1;
+    int queConsumio;
+    int montoPorPersona = 0;
+    int porcentajePropina;
+    int montoFinal;
 
-}
-
-void agregarCuenta(){
-
-    int consumioMas;
-
-    printf("Hola %s, que consumiste? (favor ingresar de a uno)\n", clienteX);
+    printf("Hola , que consumiste? (favor ingresar de a uno)\n");
     
-    while (consumioMas == 1)
-    {
+    while (consumioMas == 1){
         
-    printf("ingrese el numero a la izquierda del consumible por favor\n");
-    printf("1   Mojito\n2   Caipirinha\n3   Caipiroska\n4   Laguna Azul\n5  Blue Orange\n6  Shot de Tequila\n7  Piscola\n8  Piston\n9   Roncola\n10 Daikiri\n11 Papas Bravas");
-    printf("cuantos de estos consumiste?");
-    printf("consumiste algo mas?");
+    printf("Ingrese el numero a la izquierda del consumible por favor\n\n");
+    printf("1    Mojito\n2    Caipirinha\n3    Laguna Azul\n4    Blue Orange\n5    Daikiri\n6    Shot de Tequila\n7    Piscola\n8    Roncola\n9    Papas Bravas\n10   Pizza\n11   Completo\n\n"); 
+   
+    scanf("%i", &queConsumio);
+   
+         if (queConsumio == 1){
+
+          montoPorPersona + 3000;
+          
+          printf("Favor ingrese la hora en la que pidio el consumible\n");
+          scanf("%i", &hora);
+          
+          if(hora < 19000){
+
+            montoPorPersona - 1500;
+
+          }
+
+        }else if (queConsumio == 2){
+
+          montoPorPersona + 3000;
+          
+          printf("Favor ingrese la hora en la que pidio el consumible\n");
+          scanf("%i", &hora);
+
+          if(hora < 19000){
+
+            montoPorPersona - 1500;
+
+          }
+
+        }else if (queConsumio == 3){
+
+          montoPorPersona + 3000;
+          
+          printf("Favor ingrese la hora en la que pidio el consumible\n");
+          scanf("%i", &hora);
+
+          if(hora < 19000){
+
+            montoPorPersona - 1500;
+
+          }
+
+        }else if (queConsumio == 4){
+            
+          montoPorPersona + 3000;
+          
+          printf("Favor ingrese la hora en la que pidio el consumible\n");
+          scanf("%i", &hora);
+
+          if(hora < 19000){
+
+            montoPorPersona - 1500;
+
+          }
+
+        }else if (queConsumio == 5){
+            
+          montoPorPersona + 3000;
+          
+          printf("Favor ingrese la hora en la que pidio el consumible\n");
+          scanf("%i", &hora);
+
+          if(hora < 19000){
+
+            montoPorPersona - 1500;
+
+          }
+        }else if (queConsumio == 6){
+            
+          montoPorPersona + 5000;
+          
+          printf("Favor ingrese la hora en la que pidio el consumible\n");
+          scanf("%i", &hora);
+
+          if(hora < 19000){
+
+            montoPorPersona - 3000;
+
+          }
+        }else if (queConsumio == 7){
+            
+          montoPorPersona + 3000;
+          
+          printf("Favor ingrese la hora en la que pidio el consumible\n");
+          scanf("%i", &hora);
+
+          if(hora < 19000){
+
+            montoPorPersona - 1500;
+
+          }
+        }else if (queConsumio == 8){
+
+          montoPorPersona + 3000;
+          
+          printf("Favor ingrese la hora en la que pidio el consumible\n");
+          scanf("%i", &hora);
+
+          if(hora < 19000){
+
+            montoPorPersona - 1500;
+
+          }
+        }else if (queConsumio == 9){
+            
+          montoPorPersona + 6000;
+          
+        }else if (queConsumio == 10){
+        
+          montoPorPersona + 12000;
+    
+        }else if (queConsumio == 11){
+            
+          montoPorPersona + 1500;
+          
+        }else{
+
+    printf("Error al ingresar Consumible\n");
+
+    }
+    printf("\nConsumiste algo mas?\n");
     printf("ingrese el numero a la izquierda de la respuesta por favor\n");
     printf("1   Si\n2   No\n");
+    scanf("%i", &consumioMas);
     }
+    
+    printf("Usted consumio %i CLP\n", &montoPorPersona);
+    printf("De cuanto es la propina a agregar?\n%");
+    scanf("%i", &porcentajePropina);
+    montoFinal = ((montoPorPersona / 100) * porcentajePropina) + montoPorPersona;
+    printf("Usted debe pagar %i CLP\n", montoFinal);
 
 }
