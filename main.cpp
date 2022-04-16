@@ -20,7 +20,7 @@ int main(){
 
     Cliente cliente;
 
-    printf("\nIngrese la cantidad de personas:\n");       //preguntamos cuántos clientes tendremos que guardar    
+    printf("Ingrese la cantidad de personas:\n");       //preguntamos cuántos clientes tendremos que guardar    
     scanf("%d", &cantidadClientes);
 
     if(cantidadClientes > 1){       //realizamos condiciones para ejecutar el programa debido a la cantidad de clientes que lo utilizarán
@@ -29,7 +29,7 @@ int main(){
     
     for (int i = 1; i < cantidadClientes+1; i++) {
     
-        cout<<"Ingrese al compa numero " << cont<<"\n"; //agregamos un COUT porque no estábamos logrando imprimir bien con PRINTF y nuestro companero Marks nos ayudó con otra librería con la que trabajó anteriormente.
+        cout<<"\nIngrese al compa numero " << cont<<"\n"; //agregamos un COUT porque no estábamos logrando imprimir bien con PRINTF y nuestro companero Marks nos ayudó con otra librería con la que trabajó anteriormente.
     
         ingresarCliente(&cliente);      //Ingresamos al cliente
 
