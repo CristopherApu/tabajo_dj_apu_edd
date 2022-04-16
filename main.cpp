@@ -20,7 +20,7 @@ int main(){
 
     Cliente cliente;
 
-    printf("Ingrese la cantidad de personas:\n");       //preguntamos cuántos clientes tendremos que guardar    
+    printf("\nIngrese la cantidad de personas:\n");       //preguntamos cuántos clientes tendremos que guardar    
     scanf("%d", &cantidadClientes);
 
     if(cantidadClientes > 1){       //realizamos condiciones para ejecutar el programa debido a la cantidad de clientes que lo utilizarán
