@@ -14,7 +14,9 @@ void cuenta();
 
 int main(){
     
-    //FILE* arch = fopen ("Lista.txt", "a+");
+    FILE* arch = fopen ("Lista.txt", "a+");
+
+    printf("\nBienvenidx a Tertulia\n");
 
     int cantidadClientes;
 
@@ -34,6 +36,8 @@ int main(){
         ingresarCliente(&cliente);      //Ingresamos al cliente
 
         cuenta();                   //consultamos por su consumo
+
+        fprintf(arch, "\n%s %s \n %lu \n", cliente.nombre, cliente.mail, cliente.telefono);
 
         cont++;
     }
@@ -128,7 +132,7 @@ void cuenta(){
     scanf("%d", &consumioMas);
     }
     
-    printf("De cuanto es la propina a agregar?\n%");
+    printf("De cuanto es la propina a agregar?\n%%");
     scanf("%d", &porcentajePropina);
     montoFinal = ((montoPorPersona / 100) * porcentajePropina) + montoPorPersona;
     printf("Usted debe pagar %d CLP\n", montoFinal);
