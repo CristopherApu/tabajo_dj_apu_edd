@@ -45,7 +45,7 @@ int main(){
 
         cuenta();                   //consultamos por su consumo
 
-        fprintf(arch, "Nombre:  %s \nMail:    %s \nCelular: %lu\n\n", cliente.nombre, cliente.mail, cliente.telefono);      //Imprimimos en el .txt los datos relevantes
+        fprintf(arch, "Nombre:  %s \nMail:    %s \nCelular: %lu\n%d\n\n", cliente.nombre, cliente.mail, cliente.telefono, *montoFinal);      //Imprimimos en el .txt los datos relevantes
 
         cont++;
     }
@@ -86,7 +86,7 @@ void cuenta(){
     int queConsumio;
     int montoPorPersona = 0;
     int porcentajePropina = 0;
-    int montoFinal = 0;
+    int *montoFinal = 0;
 
     printf("Hola , que consumiste? (favor ingresar de a uno)\n");
     
@@ -172,8 +172,8 @@ void cuenta(){
     
     printf("De cuanto es la propina a agregar?\n%%");
     scanf("%d", &porcentajePropina);
-    montoFinal = ((montoPorPersona / 100) * porcentajePropina) + montoPorPersona;
-    printf("Usted debe pagar %d CLP\n", montoFinal);
+    *montoFinal = ((montoPorPersona / 100) * porcentajePropina) + montoPorPersona;
+    printf("Usted debe pagar %d CLP\n", *montoFinal);
     printf("\n-------------------------------\n");
 
 }
