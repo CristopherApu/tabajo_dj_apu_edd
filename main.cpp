@@ -9,23 +9,31 @@ struct Cliente{         //creamos la estructura del cliente
     long telefono;
 };
 
+
+//Declaramos las funciones
+
 void ingresarCliente(Cliente* a);
 void cuenta();
 
+
+//Desarrollamos el MAIN
+
 int main(){
     
-    FILE* arch = fopen ("Lista.txt", "a+");
+    remove("Lista.txt");        //Nos aseguramos de eliminar algún rastro del ejecutable anterior
+    FILE* arch = fopen ("Lista.txt", "a+");     //Iniciamos el .txt
 
-    printf("\nBienvenidx a Tertulia\n");
+    printf("Bienvenidx a Tertulia\n");      //Comenzamos a imprimir en la terminal
 
-    int cantidadClientes;
+    int cantidadClientes;               //Definimos la variable utilizada en la línea 31
 
     Cliente cliente;
 
-    printf("Ingrese la cantidad de personas:\n");       //preguntamos cuántos clientes tendremos que guardar    
-    scanf("%d", &cantidadClientes);
+    printf("Ingrese la cantidad de personas:\n");       //Consultamos por la cantidad de clientes a utiliza r la aplicación, ya sea para continuar con el programa e iterar la cantidad de veces que sea necesario, o para tirar error
 
-    if(cantidadClientes > 1){       //realizamos condiciones para ejecutar el programa debido a la cantidad de clientes que lo utilizarán
+    scanf("%d", &cantidadClientes);         //Agregamos el valor de la variable de la línea 27
+
+    if(cantidadClientes > 1){       //Evaluamos la cantidad de clientes
 
     int cont = 1;
     
@@ -37,7 +45,7 @@ int main(){
 
         cuenta();                   //consultamos por su consumo
 
-        fprintf(arch, "\n%s %s \n %lu \n", cliente.nombre, cliente.mail, cliente.telefono);
+        fprintf(arch, "Nombre:  %s \nMail:    %s \nCelular: %lu\n\n", cliente.nombre, cliente.mail, cliente.telefono);      //Imprimimos en el .txt los datos relevantes
 
         cont++;
     }
@@ -52,8 +60,14 @@ int main(){
 
     }
 
-    return 0;
+    return 0;               //Retornamos a 0 finalizando así el MAIN
 }
+
+
+
+
+
+// Desarrollo de funciones
 
 void ingresarCliente(Cliente* a){
     printf("Nombre o apodo:\n");
@@ -83,49 +97,73 @@ void cuenta(){
    
     scanf("%d", &queConsumio);
    
-         if (queConsumio == 1 || queConsumio == 2 || queConsumio == 3 || queConsumio == 4 || queConsumio == 5 || queConsumio == 7 || queConsumio == 8){
+         switch (queConsumio){
 
-          montoPorPersona = montoPorPersona + 3000;
+            case 1 : case 2 : case 3 : case 4 : case 5 : case 7 : case 8:
+             
+            montoPorPersona = montoPorPersona + 3000;
           
-          printf("Favor ingrese la hora en la que pidio el consumible\n");
-          scanf("%d", &hora);
+            printf("Favor ingrese la hora en la que pidio el consumible\n");
+            scanf("%d", &hora);
           
-          if(hora < 19000){
+            if(hora < 19000){
 
             montoPorPersona = montoPorPersona - 1500;
 
-          }
+            }
 
-        }else if (queConsumio == 6){
-            
-          montoPorPersona = montoPorPersona + 5000;
+            break;
+
+
+
+            case 6:
+
+            montoPorPersona = montoPorPersona + 5000;
           
-          printf("Favor ingrese la hora en la que pidio el consumible\n");
-          scanf("%d", &hora);
+            printf("Favor ingrese la hora en la que pidio el consumible\n");
+            scanf("%d", &hora);
 
-          if(hora < 19000){
+            if(hora < 19000){
 
             montoPorPersona = montoPorPersona - 2500;
 
-          }
-        
-        }else if (queConsumio == 9){
-            
-          montoPorPersona = montoPorPersona + 6000;
-          
-        }else if (queConsumio == 10){
-        
-          montoPorPersona = montoPorPersona + 12000;
-    
-        }else if (queConsumio == 11){
-            
-          montoPorPersona = montoPorPersona + 1500;
-          
-        }else{
+            }
 
-    printf("Error al ingresar Consumible\n");
+            break;
 
-    }
+
+
+            case 9:
+
+            montoPorPersona = montoPorPersona + 6000;
+
+            break;
+            
+
+
+            case 10:
+
+            montoPorPersona = montoPorPersona + 12000;
+
+            break;
+
+
+
+            case 11:
+
+            montoPorPersona = montoPorPersona + 1500;
+
+            break;
+
+
+
+            default:
+
+            printf("\nError al ingresar Consumible\n");
+
+            break;
+         }       
+
     printf("\nConsumiste algo mas?\n");
     printf("ingrese el numero a la izquierda de la respuesta por favor\n");
     printf("1   Si\n2   No\n");
