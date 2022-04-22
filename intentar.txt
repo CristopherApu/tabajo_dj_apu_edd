@@ -66,6 +66,8 @@ int main(){
 
     }
 
+    fclose (arch);              //Cerramos el archivo por buenas prácticas
+
     return 0;               //Retornamos a 0 finalizando así el MAIN
 }
 
