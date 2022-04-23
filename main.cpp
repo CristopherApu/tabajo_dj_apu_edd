@@ -9,7 +9,7 @@ struct Cliente{                                                                 
     long telefono;
 };
 
-int montoFinal;                                                                              //Declaramos las funciones
+int montoFinal;                                                                 //Declaramos las funciones
 
 void ingresarCliente(Cliente* a);
 void cuenta();
@@ -35,14 +35,15 @@ int main(){                                                                     
    
     for (int i = 1; i < cantidadClientes+1; i++) {
    
-        cout<<"\nIngrese al compa numero " << cont<<"\n";                       //agregamos un COUT porque no estábamos logrando imprimir bien con PRINTF y nuestro companero Marks nos ayudó con otra librería con la que trabajó anteriormente.
+        system("cls");                                                          //Limpiamos la terminal
+        cout<<"Ingrese al compa numero " << cont<<"\n";                         //agregamos un COUT porque no estábamos logrando imprimir bien con PRINTF y nuestro companero Marks nos ayudó con otra librería con la que trabajó anteriormente.
    
         ingresarCliente(&cliente);                                              //Ingresamos al cliente
 
         cuenta();                                                               //consultamos por su consumo
 
-        fprintf(arch, "Nombre:  %s \nMail:    %s \nCelular: %lu\n%d\n\n",
-        cliente.nombre, cliente.mail, cliente.telefono, montoFinal);     //Imprimimos en el .txt los datos relevantes
+        fprintf(arch, "Nombre:  %s \nMail:    %s \nCelular: %lu\n$%d CLP\n\n",
+        cliente.nombre, cliente.mail, cliente.telefono, montoFinal);            //Imprimimos en el .txt los datos relevantes
 
         cont++;
     }
